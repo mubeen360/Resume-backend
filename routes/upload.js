@@ -12,9 +12,9 @@ const router = express.Router();
 
 // Cloudinary Configuration
 cloudinary.config({
-  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.CLOUDINARY_API_KEY,
-  api_secret: process.env.CLOUDINARY_API_SECRET,
+  cloud_name: 'dqc50jeh3',
+  api_key: '819447893111718',
+  api_secret: '1sEjO3rN7gWA9iYAuVCtk7GUGlw',
 });
 
 // Set up local storage for temporary files
@@ -28,8 +28,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
-    user: "mubeennoor100@gmail.com",
-    pass: "mxbh xlqd rpvo uzwn",
+    user: "teamperfectresume@gmail.com",
+    pass: "usnn jblr hnsw tved",  
   },
 });
 
@@ -61,29 +61,12 @@ router.post('/upload', localUpload.single('file'), async (req, res) => {
     });
     
     // Step 3: Send email with attachment
-    const recipientEmail = req.body.email || "mubeennoor100@gmail.com";
+    const recipientEmail = req.body.email || "teamperfectresume@gmail.com";
     
-    // const mailOptions = {
-    //   from: "mubeennoor100@gmail.com",
-    //   to: recipientEmail,
-    //   subject: 'File Upload Notification',
-    //   html: `
-    //     <h3>File Upload Successful!</h3>
-    //     <p>A new file has been uploaded to Cloudinary.</p>
-    //     <p><strong>File URL:</strong> <a href="${cloudinaryUpload.secure_url}">${cloudinaryUpload.secure_url}</a></p>
-    //     <p><strong>File ID:</strong> ${cloudinaryUpload.public_id}</p>
-    //     <p><strong>Original Filename:</strong> ${originalFilename}</p>
-    //     <p><strong>Upload Time:</strong> ${new Date().toLocaleString()}</p>
-    //   `,
-    //   attachments: [{
-    //     filename: originalFilename,
-    //     content: fileBuffer
-    //   }]
-    // };
     
     // Updated email template code for the upload route
 const mailOptions = {
-  from: "mubeennoor100@gmail.com",
+  from: "teamperfectresume@gmail.com",
   to: recipientEmail,
   subject: 'Resume Received - Professional Review Coming Soon',
   html: `
